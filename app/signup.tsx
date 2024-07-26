@@ -6,14 +6,34 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { defaultStyles } from "@/constants/Styles";
 import Colors from "@/constants/Colors";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
+import { useSignUp } from "@clerk/clerk-expo";
 
 export default function SignUp() {
   const [countryCode, setCountryCode] = useState("+91");
   const [phoneNumber, setPhoneNumber] = useState("");
+
+  const { signUp } = useSignUp();
+
+  const signUpUser = useCallback(async () => {
+    const fullPhoneNumber = countryCode + phoneNumber;
+
+    try {
+      await signUp?.create({ phoneNumber: fullPhoneNumber });
+      await signUp?.preparePhoneNumberVerification();
+      router.push({
+        pathname: "/verify/[phoneNumber]",
+        params: {
+          phoneNumber: fullPhoneNumber,
+        },
+      });
+    } catch (error) {
+      console.log("Error signing up:", error);
+    }
+  }, [countryCode, phoneNumber]);
 
   return (
     <KeyboardAvoidingView style={defaultStyles.flex1} behavior="padding">
@@ -50,9 +70,10 @@ export default function SignUp() {
         <View style={defaultStyles.flex1} />
 
         <TouchableOpacity
+          onPress={signUpUser}
           style={[
             defaultStyles.pillButton,
-            { marginVertical: 20 },
+            styles.signUpBtn,
             phoneNumber !== "" ? styles.enabled : styles.disabled,
           ]}
         >
@@ -80,5 +101,8 @@ const styles = StyleSheet.create({
   },
   disabled: {
     backgroundColor: Colors.primaryMuted,
+  },
+  signUpBtn: {
+    marginVertical: 20,
   },
 });

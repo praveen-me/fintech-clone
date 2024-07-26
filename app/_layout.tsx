@@ -1,4 +1,6 @@
 import Colors from "@/constants/Colors";
+import { tokenCache } from "@/utils/tokenCache";
+import { ClerkProvider } from "@clerk/clerk-expo";
 import { Ionicons } from "@expo/vector-icons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useFonts } from "expo-font";
@@ -21,7 +23,7 @@ export const unstable_settings = {
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
-export default function InitialLayout() {
+function InitialLayout() {
   const [loaded, error] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
     ...FontAwesome.font,
@@ -92,6 +94,17 @@ export default function InitialLayout() {
   );
 }
 
+const CLERK_PUBLISHABLE_KEY = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
+
 const RootLayout = () => {
-  return <InitialLayout />;
+  return (
+    <ClerkProvider
+      publishableKey={CLERK_PUBLISHABLE_KEY}
+      tokenCache={tokenCache}
+    >
+      <InitialLayout />
+    </ClerkProvider>
+  );
 };
+
+export default RootLayout;

@@ -5,13 +5,20 @@ import {
   TextInput,
   TouchableOpacity,
   KeyboardAvoidingView,
+  Alert,
 } from "react-native";
-import React, { ReactElement, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { defaultStyles } from "@/constants/Styles";
 import Colors from "@/constants/Colors";
-import { Link } from "expo-router";
+
 import { Ionicons } from "@expo/vector-icons";
-import { GlyphMap } from "@expo/vector-icons/build/createIconSet";
+import {
+  isClerkAPIResponseError,
+  useSignIn,
+  useSignUp,
+} from "@clerk/clerk-expo";
+import { SignInFactor } from "@clerk/types";
+import { useRouter } from "expo-router";
 
 enum LoginType {
   PHONE,
@@ -40,6 +47,46 @@ const SignInButton = (props: ISignInButtonProps) => (
 export default function SignUp() {
   const [countryCode, setCountryCode] = useState("+91");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const router = useRouter();
+  const { signIn } = useSignIn();
+
+  const loginUser = useCallback(async (type: LoginType) => {
+    if (type === LoginType.PHONE) {
+      try {
+        const fullPhoneNumber = countryCode + phoneNumber;
+
+        const { supportedFirstFactors } = await signIn!.create({
+          identifier: fullPhoneNumber,
+        });
+
+        const firstPhoneFactor = supportedFirstFactors.find(
+          (factor: SignInFactor) => factor.strategy === "phone_code"
+        );
+
+        const { phoneNumberId } = firstPhoneFactor!;
+
+        await signIn?.prepareFirstFactor({
+          strategy: "phone_code",
+          phoneNumberId,
+        });
+
+        router.push({
+          pathname: "/verify/[phoneNumber]",
+          params: {
+            phoneNumber: fullPhoneNumber,
+          },
+        });
+      } catch (e) {
+        console.log(e);
+
+        if (isClerkAPIResponseError(e)) {
+          if (e.errors[0].code === "form_identifier_not_found") {
+            Alert.alert("Error", e.errors[0].message);
+          }
+        }
+      }
+    }
+  }, []);
 
   return (
     <KeyboardAvoidingView style={defaultStyles.flex1} behavior="padding">
@@ -66,13 +113,14 @@ export default function SignUp() {
         </View>
 
         <TouchableOpacity
+          onPress={() => loginUser(LoginType.PHONE)}
           style={[
             defaultStyles.pillButton,
             { marginBottom: 20 },
             phoneNumber !== "" ? styles.enabled : styles.disabled,
           ]}
         >
-          <Text style={defaultStyles.buttonText}>Sign up</Text>
+          <Text style={defaultStyles.buttonText}>Log In</Text>
         </TouchableOpacity>
 
         <View
