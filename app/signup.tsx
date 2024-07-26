@@ -20,22 +20,16 @@ export default function SignUp() {
 
   const signUpUser = useCallback(async () => {
     const fullPhoneNumber = countryCode + phoneNumber;
-    router.push({
-      pathname: "/verify/[phoneNumber]",
-      params: {
-        phoneNumber: fullPhoneNumber,
-      },
-    });
 
     try {
-      // await signUp?.create({ phoneNumber: fullPhoneNumber });
-      // await signUp?.preparePhoneNumberVerification();
-      // router.push({
-      //   pathname: "/verify/[phoneNumber]",
-      //   params: {
-      //     phoneNumber: fullPhoneNumber,
-      //   },
-      // });
+      await signUp?.create({ phoneNumber: fullPhoneNumber });
+      await signUp?.preparePhoneNumberVerification();
+      router.push({
+        pathname: "/verify/[phoneNumber]",
+        params: {
+          phoneNumber: fullPhoneNumber,
+        },
+      });
     } catch (error) {
       console.log("Error signing up:", error);
     }

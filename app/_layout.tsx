@@ -1,10 +1,10 @@
 import Colors from "@/constants/Colors";
 import { tokenCache } from "@/utils/tokenCache";
-import { ClerkProvider } from "@clerk/clerk-expo";
+import { ClerkProvider, useAuth } from "@clerk/clerk-expo";
 import { Ionicons } from "@expo/vector-icons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useFonts } from "expo-font";
-import { Link, Stack, useRouter } from "expo-router";
+import { Link, Stack, useRouter, useSegments } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { TouchableOpacity } from "react-native";
@@ -30,6 +30,8 @@ function InitialLayout() {
   });
 
   const router = useRouter();
+  const { isSignedIn } = useAuth();
+  const segments = useSegments();
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {
@@ -42,12 +44,24 @@ function InitialLayout() {
     }
   }, [loaded]);
 
+  useEffect(() => {
+    if (!loaded) return;
+
+    const isAuthGroup = segments[0] === "(authenticated)";
+
+    if (isSignedIn && !isAuthGroup) {
+      router.replace("/(authenticated)/(tabs)/home");
+    } else {
+      router.replace("/");
+    }
+  }, [isSignedIn]);
+
   if (!loaded) {
     return null;
   }
 
   return (
-    <Stack>
+    <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="index" options={{ header: () => null }} />
       <Stack.Screen
         name="signup"

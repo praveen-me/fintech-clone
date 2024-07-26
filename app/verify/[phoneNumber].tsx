@@ -1,4 +1,4 @@
-import { View, Text, Platform, StyleSheet } from "react-native";
+import { View, Text, Platform, StyleSheet, Alert } from "react-native";
 import React, { Fragment, useCallback, useEffect, useState } from "react";
 import { Link, useLocalSearchParams } from "expo-router";
 import {
@@ -9,6 +9,11 @@ import {
 } from "react-native-confirmation-code-field";
 import { defaultStyles } from "@/constants/Styles";
 import Colors from "@/constants/Colors";
+import {
+  isClerkAPIResponseError,
+  useSignIn,
+  useSignUp,
+} from "@clerk/clerk-expo";
 
 const CELL_COUNT = 6;
 
@@ -18,6 +23,8 @@ export default function Page() {
     signin: string;
   }>();
   const [verificationCode, setVerificationCode] = useState("");
+  const { signUp, setActive } = useSignUp();
+  const { signIn } = useSignIn();
 
   const ref = useBlurOnFulfill({
     value: verificationCode,
@@ -40,9 +47,36 @@ export default function Page() {
     }
   }, [verificationCode]);
 
-  const verifyVerificationCode = useCallback(() => {}, [verificationCode]);
+  const verifyVerificationCode = useCallback(async () => {
+    try {
+      await signUp!.attemptPhoneNumberVerification({
+        code: verificationCode,
+      });
 
-  const verifySignInCode = useCallback(() => {}, [verificationCode]);
+      await setActive!({ session: signUp!.createdSessionId });
+    } catch (e) {
+      console.log(e);
+      if (isClerkAPIResponseError(e)) {
+        Alert.alert("Error", e.errors[0].message);
+      }
+    }
+  }, [verificationCode]);
+
+  const verifySignInCode = useCallback(async () => {
+    try {
+      await signIn!.attemptFirstFactor({
+        strategy: "phone_code",
+        code: verificationCode,
+      });
+
+      await setActive!({ session: signIn!.createdSessionId });
+    } catch (e) {
+      console.log(e);
+      if (isClerkAPIResponseError(e)) {
+        Alert.alert("Error", e.errors[0].message);
+      }
+    }
+  }, [verificationCode]);
 
   return (
     <View style={defaultStyles.container}>
