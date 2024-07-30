@@ -3,10 +3,27 @@ import React from "react";
 import { Tabs } from "expo-router";
 import Colors from "@/constants/Colors";
 import { FontAwesome } from "@expo/vector-icons";
+import { BlurView } from "expo-blur";
+import Header from "@/components/Header";
 
 export default function _layout() {
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: Colors.primary }}>
+    <Tabs
+      screenOptions={{
+        tabBarActiveTintColor: Colors.primary,
+        tabBarBackground: () => (
+          <BlurView
+            intensity={50}
+            style={{ flex: 1, backgroundColor: "rgba(0, 0, 0, 0.05)" }}
+          />
+        ),
+        tabBarStyle: {
+          backgroundColor: "transparent",
+          position: "absolute",
+          borderTopWidth: 0,
+        },
+      }}
+    >
       <Tabs.Screen
         name="home"
         options={{
@@ -14,6 +31,7 @@ export default function _layout() {
           tabBarIcon: ({ size, color }) => (
             <FontAwesome name="registered" size={size} color={color} />
           ),
+          header: () => <Header />,
         }}
       />
       <Tabs.Screen

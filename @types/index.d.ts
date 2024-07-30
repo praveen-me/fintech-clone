@@ -3,3 +3,94 @@ export interface TokenCache {
   saveToken: (key: string, token: string) => Promise<void>;
   clearToken?: (key: string) => void;
 }
+
+export interface Currency {
+  id: number;
+  name: string;
+  symbol: string;
+  slug: string;
+  cmc_rank: number;
+  num_market_pairs: number;
+  circulating_supply: number;
+  total_supply: number;
+  max_supply: number;
+  infinite_supply: null;
+  last_updated: string;
+  date_added: string;
+  tags: string[];
+  platform: null;
+  self_reported_circulating_supply: null;
+  self_reported_market_cap: null;
+  quota: {
+    [key: string]: any;
+  };
+}
+
+export interface CMCStatus {
+  timestamp: string;
+  error_code: number;
+  error_message: null;
+  elapsed: number;
+  credit_count: number;
+  notice: null;
+}
+
+interface Contractaddress {
+  contract_address: string;
+  platform: Platform2;
+}
+
+interface Coin {
+  id: string;
+  name: string;
+  symbol: string;
+  slug: string;
+}
+
+interface Platform {
+  id: string;
+  name: string;
+  slug: string;
+  symbol: string;
+  token_address: string;
+  coin?: Coin;
+}
+
+export interface CryptoInfo {
+  id: number;
+  name: string;
+  symbol: string;
+  category: string;
+  description: string;
+  slug: string;
+  logo: string;
+  subreddit: string;
+  notice: string;
+  tags: string[];
+  "tag-names": string[];
+  "tag-groups": string[];
+  urls: Urls;
+  platform: Platform | null;
+  date_added: string;
+  twitter_username: string;
+  is_hidden: number;
+  date_launched: string;
+  contract_address: Contractaddress[] | [];
+  self_reported_circulating_supply: null;
+  self_reported_tags: null;
+  self_reported_market_cap: null;
+  infinite_supply: boolean;
+}
+
+interface Urls {
+  website: string[];
+  twitter: any[];
+  message_board: string[];
+  chat: any[];
+  facebook: any[];
+  explorer: string[];
+  reddit: string[];
+  technical_doc: string[];
+  source_code: string[];
+  announcement: any[];
+}

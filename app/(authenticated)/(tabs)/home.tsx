@@ -6,6 +6,8 @@ import Dropdown from "@/components/Dropdown";
 import { defaultStyles } from "@/constants/Styles";
 import { useBalanceStore } from "@/store/balanceStore";
 import { Ionicons } from "@expo/vector-icons";
+import { transactionTitle } from "@/constants/randomTransaction";
+import { useHeaderHeight } from "@react-navigation/elements";
 
 const items = [
   { key: "statement", icon: "list.bullet.rectangle.fill", title: "Statement" },
@@ -23,6 +25,8 @@ const items = [
 ];
 
 export default function Page() {
+  const headerHeight = useHeaderHeight();
+
   const { transactions, balance, runTransaction, clearTransactions } =
     useBalanceStore();
 
@@ -31,16 +35,21 @@ export default function Page() {
   };
 
   const handleAddMoney = useCallback(() => {
+    const randomTitleIndex = Math.floor(Math.random() * 100);
+
     runTransaction({
       id: Date.now().toString(),
       date: new Date(),
       amount: Math.floor(Math.random() * 1000) - 300,
-      title: "Added money",
+      title: transactionTitle[randomTitleIndex],
     });
   }, []);
 
   return (
-    <ScrollView style={{ backgroundColor: Colors.background }}>
+    <ScrollView
+      style={{ backgroundColor: Colors.background }}
+      contentContainerStyle={{ paddingTop: headerHeight }}
+    >
       <View style={styles.account}>
         <View style={styles.row}>
           <Text style={styles.balance}>{balance()}</Text>
