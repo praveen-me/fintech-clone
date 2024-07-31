@@ -8,7 +8,7 @@ import { useFonts } from "expo-font";
 import { Link, Stack, useRouter, useSegments } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import "react-native-reanimated";
 
 const queryClient = new QueryClient();
@@ -64,7 +64,7 @@ function InitialLayout() {
   }
 
   return (
-    <Stack screenOptions={{ headerShown: false }}>
+    <Stack>
       <Stack.Screen name="index" options={{ header: () => null }} />
       <Stack.Screen
         name="signup"
@@ -117,6 +117,38 @@ function InitialLayout() {
             <TouchableOpacity onPress={() => router.back()}>
               <Ionicons name="arrow-back" size={30} color={Colors.dark} />
             </TouchableOpacity>
+          ),
+        }}
+      />
+
+      <Stack.Screen
+        name="(authenticated)/(tabs)"
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="(authenticated)/coin/[id]"
+        options={{
+          title: "",
+          headerTransparent: true,
+          headerLargeTitle: true,
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => router.back()}>
+              <Ionicons name="arrow-back" size={30} color={Colors.dark} />
+            </TouchableOpacity>
+          ),
+          headerRight: () => (
+            <View style={{ flexDirection: "row", gap: 10 }}>
+              <TouchableOpacity>
+                <Ionicons
+                  name="notifications-outline"
+                  size={30}
+                  color={Colors.dark}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Ionicons name="star-outline" size={30} color={Colors.dark} />
+              </TouchableOpacity>
+            </View>
           ),
         }}
       />

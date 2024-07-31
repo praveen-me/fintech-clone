@@ -3,6 +3,7 @@ import React, { useMemo } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { Image } from "expo-image";
 import Colors from "@/constants/Colors";
+import { Link } from "expo-router";
 
 type CryptoInfoAsRowProps = {
   id: number;
@@ -23,23 +24,25 @@ export default function CryptoInfoAsRow(props: CryptoInfoAsRowProps) {
   }, [isPriceFall]);
 
   return (
-    <TouchableOpacity style={styles.root}>
-      <Image source={logo} style={styles.image} />
+    <Link asChild href={`/coin/${props.id}`}>
+      <TouchableOpacity style={styles.root}>
+        <Image source={logo} style={styles.image} />
 
-      <View style={styles.symbolWrapper}>
-        <Text style={styles.symbolName}>{name}</Text>
-        <Text style={styles.symbol}>{symbol}</Text>
-      </View>
-      <View style={styles.priceWrapper}>
-        <Text>{price.toFixed(2)} ₹</Text>
-        <View style={styles.priceIndicatorWrapper}>
-          <Ionicons name="caret-up" size={16} color={priceIndicatorColor} />
-          <Text style={{ color: priceIndicatorColor }}>
-            {change_1h.toFixed(2)}₹
-          </Text>
+        <View style={styles.symbolWrapper}>
+          <Text style={styles.symbolName}>{name}</Text>
+          <Text style={styles.symbol}>{symbol}</Text>
         </View>
-      </View>
-    </TouchableOpacity>
+        <View style={styles.priceWrapper}>
+          <Text>{price.toFixed(2)} ₹</Text>
+          <View style={styles.priceIndicatorWrapper}>
+            <Ionicons name="caret-up" size={16} color={priceIndicatorColor} />
+            <Text style={{ color: priceIndicatorColor }}>
+              {change_1h.toFixed(2)}₹
+            </Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+    </Link>
   );
 }
 
