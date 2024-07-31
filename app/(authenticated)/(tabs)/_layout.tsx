@@ -60,6 +60,7 @@ export default function _layout() {
           tabBarIcon: ({ size, color }) => (
             <FontAwesome name="bitcoin" size={size} color={color} />
           ),
+          header: () => <Header />,
         }}
       />
       <Tabs.Screen

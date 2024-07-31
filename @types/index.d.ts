@@ -4,6 +4,23 @@ export interface TokenCache {
   clearToken?: (key: string) => void;
 }
 
+interface CoinQuote {
+  price: number;
+  volume_24h: number;
+  volume_change_24h: number;
+  percent_change_1h: number;
+  percent_change_24h: number;
+  percent_change_7d: number;
+  percent_change_30d: number;
+  percent_change_60d: number;
+  percent_change_90d: number;
+  market_cap: number;
+  market_cap_dominance: number;
+  fully_diluted_market_cap: number;
+  tvl: null | number;
+  last_updated: string;
+}
+
 export interface Currency {
   id: number;
   name: string;
@@ -21,8 +38,8 @@ export interface Currency {
   platform: null;
   self_reported_circulating_supply: null;
   self_reported_market_cap: null;
-  quota: {
-    [key: string]: any;
+  quote: {
+    [key: string]: CoinQuote;
   };
 }
 
