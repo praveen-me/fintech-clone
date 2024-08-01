@@ -126,7 +126,7 @@ function InitialLayout() {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="(authenticated)/coin/[id]"
+        name="(authenticated)/coin/[id]/index"
         options={{
           title: "",
           headerTransparent: true,
