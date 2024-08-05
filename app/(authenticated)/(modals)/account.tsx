@@ -65,7 +65,6 @@ export default function account() {
         allowsEditing: true,
         aspect: [4, 4],
         quality: 0.5,
-        base64: true,
       });
 
       if (!result.canceled) {
@@ -93,8 +92,6 @@ export default function account() {
 
           reader.onerror = (error) => reject(error);
         });
-
-        console.log(base64.replace("jpeg", "png"));
 
         const resource = await user?.setProfileImage({
           file: base64,
@@ -182,18 +179,9 @@ export default function account() {
           </TouchableOpacity>
           <TouchableOpacity style={styles.btn}>
             <Ionicons name="megaphone" size={24} color={Colors.white} />
-            <Text style={{ color: Colors.white, fontSize: 18, flex: 1 }}>
-              Inbox
-            </Text>
-            <View
-              style={{
-                backgroundColor: Colors.primary,
-                paddingHorizontal: 10,
-                borderRadius: 10,
-                justifyContent: "center",
-              }}
-            >
-              <Text style={{ color: Colors.white, fontSize: 12 }}>14</Text>
+            <Text style={styles.btnText}>Inbox</Text>
+            <View style={styles.notificationNumber}>
+              <Text style={styles.notification}>14</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -204,14 +192,9 @@ export default function account() {
               style={styles.btn}
               onPress={() => onChangeAppIcon(icon.name)}
             >
-              <Image source={icon.icon} style={{ width: 24, height: 24 }} />
+              <Image source={icon.icon} style={styles.appIcon} />
               <Text style={styles.btnText}>{icon.name}</Text>
-              <View
-                style={{
-                  flex: 1,
-                  alignItems: "flex-end",
-                }}
-              >
+              <View style={styles.activeIconCheckWrapper}>
                 {activeIcon.toLowerCase() === icon.name.toLowerCase() && (
                   <Ionicons name="checkmark" size={24} color={Colors.white} />
                 )}
@@ -277,5 +260,24 @@ const styles = StyleSheet.create({
   btnText: {
     color: "#fff",
     fontSize: 18,
+    flex: 1,
+  },
+  notificationNumber: {
+    backgroundColor: Colors.primary,
+    paddingHorizontal: 10,
+    borderRadius: 10,
+    justifyContent: "center",
+  },
+  notification: {
+    color: Colors.white,
+    fontSize: 12,
+  },
+  appIcon: {
+    width: 24,
+    height: 24,
+  },
+  activeIconCheckWrapper: {
+    flex: 1,
+    alignItems: "flex-end",
   },
 });

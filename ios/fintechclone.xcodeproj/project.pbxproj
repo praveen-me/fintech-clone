@@ -7,46 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A39A15CB2AC4E1184C5209E /* blue-Icon-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A27019121C24EEB8499F049 /* blue-Icon-60x60@3x.png */; };
+		0D399519492A423EACC2FBF1 /* blue-Icon-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2621CE2347DD48168AE06214 /* blue-Icon-60x60@2x.png */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		474F844ABD9F4E7E9F33BD0E /* default-Icon-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7EB132C64F540AAB0738BB9 /* default-Icon-60x60@3x.png */; };
-		58C813C202F244E1BB26BC44 /* blue-Icon-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11879593CB9D4C9B8BE7A31A /* blue-Icon-60x60@2x.png */; };
-		593981DAF452ECCCA9D590BA /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A0A43450075BA64581D7189A /* PrivacyInfo.xcprivacy */; };
-		75BCD4277B9A47A197BCDCFB /* light-Icon-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B52159D5A5C47A495E6A410 /* light-Icon-60x60@2x.png */; };
+		4A39EF0603144683A9C54648 /* light-Icon-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C3D9C24DB7648F2BB5E0E97 /* light-Icon-60x60@2x.png */; };
+		4B82B667BFFE4E8B8E5DD1E9 /* default-Icon-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DCE8B865344DF5B963B5EA /* default-Icon-60x60@2x.png */; };
+		5C99A1888261446B964CDEB3 /* light-Icon-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30B3406FA2FE459DA28C4C2A /* light-Icon-60x60@3x.png */; };
+		8384D93F9C504CB986DAD832 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22467468F8C4A6EA3BD0EBC /* noop-file.swift */; };
 		96905EF65AED1B983A6B3ABC /* libPods-fintechclone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-fintechclone.a */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
-		C6E6B907F8144AB9853E80E4 /* light-Icon-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E351DECE95674B188B43AFA0 /* light-Icon-60x60@3x.png */; };
-		D78882C6B19043DF9825613B /* default-Icon-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E36EE1CBF954148952DB87C /* default-Icon-60x60@2x.png */; };
-		D83C7EC37A2345469C498F6B /* blue-Icon-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 47B2F305EEC042D2B9DF8C81 /* blue-Icon-60x60@3x.png */; };
-		E0C6F4A9DF734369B51DA720 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45AD0E3E52456AA7D61847 /* noop-file.swift */; };
+		BC6BE6A6BA72B54A23EBCC24 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 76203E2752129D5F3312008A /* PrivacyInfo.xcprivacy */; };
+		D98E3022DCCD46A2898F9539 /* default-Icon-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA8002C363D46F7ACD9E726 /* default-Icon-60x60@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		009F21210C8C4DE1B41CA43C /* fintechclone-Bridging-Header.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "fintechclone-Bridging-Header.h"; path = "fintechclone/fintechclone-Bridging-Header.h"; sourceTree = "<group>"; };
-		11879593CB9D4C9B8BE7A31A /* blue-Icon-60x60@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "blue-Icon-60x60@2x.png"; path = "fintechclone/DynamicAppIcons/blue-Icon-60x60@2x.png"; sourceTree = "<group>"; };
+		0A27019121C24EEB8499F049 /* blue-Icon-60x60@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "blue-Icon-60x60@3x.png"; path = "fintechclone/DynamicAppIcons/blue-Icon-60x60@3x.png"; sourceTree = "<group>"; };
+		0C3D9C24DB7648F2BB5E0E97 /* light-Icon-60x60@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "light-Icon-60x60@2x.png"; path = "fintechclone/DynamicAppIcons/light-Icon-60x60@2x.png"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* fintechclone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fintechclone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = fintechclone/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = fintechclone/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = fintechclone/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = fintechclone/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = fintechclone/main.m; sourceTree = "<group>"; };
-		1B52159D5A5C47A495E6A410 /* light-Icon-60x60@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "light-Icon-60x60@2x.png"; path = "fintechclone/DynamicAppIcons/light-Icon-60x60@2x.png"; sourceTree = "<group>"; };
-		47B2F305EEC042D2B9DF8C81 /* blue-Icon-60x60@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "blue-Icon-60x60@3x.png"; path = "fintechclone/DynamicAppIcons/blue-Icon-60x60@3x.png"; sourceTree = "<group>"; };
-		4D45AD0E3E52456AA7D61847 /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "fintechclone/noop-file.swift"; sourceTree = "<group>"; };
+		2621CE2347DD48168AE06214 /* blue-Icon-60x60@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "blue-Icon-60x60@2x.png"; path = "fintechclone/DynamicAppIcons/blue-Icon-60x60@2x.png"; sourceTree = "<group>"; };
+		30B3406FA2FE459DA28C4C2A /* light-Icon-60x60@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "light-Icon-60x60@3x.png"; path = "fintechclone/DynamicAppIcons/light-Icon-60x60@3x.png"; sourceTree = "<group>"; };
+		45DCE8B865344DF5B963B5EA /* default-Icon-60x60@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "default-Icon-60x60@2x.png"; path = "fintechclone/DynamicAppIcons/default-Icon-60x60@2x.png"; sourceTree = "<group>"; };
 		58EEBF8E8E6FB1BC6CAF49B5 /* libPods-fintechclone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fintechclone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C2E3173556A471DD304B334 /* Pods-fintechclone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fintechclone.debug.xcconfig"; path = "Target Support Files/Pods-fintechclone/Pods-fintechclone.debug.xcconfig"; sourceTree = "<group>"; };
+		76203E2752129D5F3312008A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = fintechclone/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		7A4D352CD337FB3A3BF06240 /* Pods-fintechclone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fintechclone.release.xcconfig"; path = "Target Support Files/Pods-fintechclone/Pods-fintechclone.release.xcconfig"; sourceTree = "<group>"; };
-		8E36EE1CBF954148952DB87C /* default-Icon-60x60@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "default-Icon-60x60@2x.png"; path = "fintechclone/DynamicAppIcons/default-Icon-60x60@2x.png"; sourceTree = "<group>"; };
-		A0A43450075BA64581D7189A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = fintechclone/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = fintechclone/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
-		C7EB132C64F540AAB0738BB9 /* default-Icon-60x60@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "default-Icon-60x60@3x.png"; path = "fintechclone/DynamicAppIcons/default-Icon-60x60@3x.png"; sourceTree = "<group>"; };
-		E351DECE95674B188B43AFA0 /* light-Icon-60x60@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "light-Icon-60x60@3x.png"; path = "fintechclone/DynamicAppIcons/light-Icon-60x60@3x.png"; sourceTree = "<group>"; };
+		C3FB5FEA1B5443C2AEE1705F /* fintechclone-Bridging-Header.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "fintechclone-Bridging-Header.h"; path = "fintechclone/fintechclone-Bridging-Header.h"; sourceTree = "<group>"; };
+		D22467468F8C4A6EA3BD0EBC /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "fintechclone/noop-file.swift"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-fintechclone/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		FFA8002C363D46F7ACD9E726 /* default-Icon-60x60@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "default-Icon-60x60@3x.png"; path = "fintechclone/DynamicAppIcons/default-Icon-60x60@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,10 +71,10 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				4D45AD0E3E52456AA7D61847 /* noop-file.swift */,
-				009F21210C8C4DE1B41CA43C /* fintechclone-Bridging-Header.h */,
-				6EDA7D264FCE4C31BA53E852 /* DynamicAppIcons */,
-				A0A43450075BA64581D7189A /* PrivacyInfo.xcprivacy */,
+				D22467468F8C4A6EA3BD0EBC /* noop-file.swift */,
+				C3FB5FEA1B5443C2AEE1705F /* fintechclone-Bridging-Header.h */,
+				D7835B59F4224C7A92AB7F05 /* DynamicAppIcons */,
+				76203E2752129D5F3312008A /* PrivacyInfo.xcprivacy */,
 			);
 			name = fintechclone;
 			sourceTree = "<group>";
@@ -86,20 +86,6 @@
 				58EEBF8E8E6FB1BC6CAF49B5 /* libPods-fintechclone.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6EDA7D264FCE4C31BA53E852 /* DynamicAppIcons */ = {
-			isa = PBXGroup;
-			children = (
-				8E36EE1CBF954148952DB87C /* default-Icon-60x60@2x.png */,
-				C7EB132C64F540AAB0738BB9 /* default-Icon-60x60@3x.png */,
-				11879593CB9D4C9B8BE7A31A /* blue-Icon-60x60@2x.png */,
-				47B2F305EEC042D2B9DF8C81 /* blue-Icon-60x60@3x.png */,
-				1B52159D5A5C47A495E6A410 /* light-Icon-60x60@2x.png */,
-				E351DECE95674B188B43AFA0 /* light-Icon-60x60@3x.png */,
-			);
-			name = DynamicAppIcons;
-			path = "";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -158,6 +144,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D7835B59F4224C7A92AB7F05 /* DynamicAppIcons */ = {
+			isa = PBXGroup;
+			children = (
+				45DCE8B865344DF5B963B5EA /* default-Icon-60x60@2x.png */,
+				FFA8002C363D46F7ACD9E726 /* default-Icon-60x60@3x.png */,
+				2621CE2347DD48168AE06214 /* blue-Icon-60x60@2x.png */,
+				0A27019121C24EEB8499F049 /* blue-Icon-60x60@3x.png */,
+				0C3D9C24DB7648F2BB5E0E97 /* light-Icon-60x60@2x.png */,
+				30B3406FA2FE459DA28C4C2A /* light-Icon-60x60@3x.png */,
+			);
+			name = DynamicAppIcons;
+			path = "";
+			sourceTree = "<group>";
+		};
 		D7E4C46ADA2E9064B798F356 /* ExpoModulesProviders */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,13 +174,13 @@
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "fintechclone" */;
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-				ADA2A80BA06CBA2BDEEB34BE /* [Expo] Configure project */,
+				C8D1EF0B07F8262088BE3492 /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-				50F845A6457D77649EB9BE4E /* [CP] Embed Pods Frameworks */,
+				36A1015033441D5418CCC94E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,13 +230,13 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				D78882C6B19043DF9825613B /* default-Icon-60x60@2x.png in Resources */,
-				474F844ABD9F4E7E9F33BD0E /* default-Icon-60x60@3x.png in Resources */,
-				58C813C202F244E1BB26BC44 /* blue-Icon-60x60@2x.png in Resources */,
-				D83C7EC37A2345469C498F6B /* blue-Icon-60x60@3x.png in Resources */,
-				75BCD4277B9A47A197BCDCFB /* light-Icon-60x60@2x.png in Resources */,
-				C6E6B907F8144AB9853E80E4 /* light-Icon-60x60@3x.png in Resources */,
-				593981DAF452ECCCA9D590BA /* PrivacyInfo.xcprivacy in Resources */,
+				4B82B667BFFE4E8B8E5DD1E9 /* default-Icon-60x60@2x.png in Resources */,
+				D98E3022DCCD46A2898F9539 /* default-Icon-60x60@3x.png in Resources */,
+				0D399519492A423EACC2FBF1 /* blue-Icon-60x60@2x.png in Resources */,
+				0A39A15CB2AC4E1184C5209E /* blue-Icon-60x60@3x.png in Resources */,
+				4A39EF0603144683A9C54648 /* light-Icon-60x60@2x.png in Resources */,
+				5C99A1888261446B964CDEB3 /* light-Icon-60x60@3x.png in Resources */,
+				BC6BE6A6BA72B54A23EBCC24 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +280,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		50F845A6457D77649EB9BE4E /* [CP] Embed Pods Frameworks */ = {
+		36A1015033441D5418CCC94E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -332,7 +332,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-fintechclone/Pods-fintechclone-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ADA2A80BA06CBA2BDEEB34BE /* [Expo] Configure project */ = {
+		C8D1EF0B07F8262088BE3492 /* [Expo] Configure project */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -361,7 +361,7 @@
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */,
-				E0C6F4A9DF734369B51DA720 /* noop-file.swift in Sources */,
+				8384D93F9C504CB986DAD832 /* noop-file.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
