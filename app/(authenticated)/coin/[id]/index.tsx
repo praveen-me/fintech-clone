@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
-import React, { useCallback, useState } from "react";
+import React, { useCallback } from "react";
 import { Stack, useLocalSearchParams } from "expo-router";
 import { useHeaderHeight } from "@react-navigation/elements";
 import { useCryptoStore } from "@/store/cryptoStore";
@@ -27,7 +27,7 @@ export default function Page() {
   const _renderSectionHeader = useCallback(() => <RenderSectionHeader />, []);
   const _renderListHeader = useCallback(
     () => <RenderListHeader currency={currentCoinInfo} />,
-    []
+    [currentCoinInfo]
   );
   const _renderItem = useCallback(
     () => <RenderItem description={currentCoinInfo.description} />,

@@ -12,11 +12,7 @@ import { defaultStyles } from "@/constants/Styles";
 import Colors from "@/constants/Colors";
 
 import { Ionicons } from "@expo/vector-icons";
-import {
-  isClerkAPIResponseError,
-  useSignIn,
-  useSignUp,
-} from "@clerk/clerk-expo";
+import { isClerkAPIResponseError, useSignIn } from "@clerk/clerk-expo";
 import { SignInFactor } from "@clerk/types";
 import { useRouter } from "expo-router";
 
@@ -74,10 +70,11 @@ export default function SignUp() {
           pathname: "/verify/[phoneNumber]",
           params: {
             phoneNumber: fullPhoneNumber,
+            signin: "true",
           },
         });
       } catch (e) {
-        console.log(e);
+        console.log(JSON.stringify(e, null, 2));
 
         if (isClerkAPIResponseError(e)) {
           if (e.errors[0].code === "form_identifier_not_found") {

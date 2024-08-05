@@ -18,3 +18,6 @@ export const getCryptoListing = (limit?: number) =>
 
 export const getCryptoInfo = (ids: string) =>
   api.get(`/v2/cryptocurrency/info?id=${ids}`);
+
+export const getCoinChartData = (ids: string) =>
+  api.get(`/v2/cryptocurrency/info?id=${ids}`);

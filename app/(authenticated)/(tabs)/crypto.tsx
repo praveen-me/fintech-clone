@@ -1,5 +1,5 @@
-import { View, Text, ScrollView, TouchableOpacity } from "react-native";
-import React, { useEffect, useMemo } from "react";
+import { View, Text, ScrollView } from "react-native";
+import React, { useMemo } from "react";
 import { getCryptoInfo, getCryptoListing } from "@/api";
 import { useQuery } from "@tanstack/react-query";
 import { CMCStatus, CryptoInfo, Currency } from "@/@types";
@@ -9,9 +9,11 @@ import { defaultStyles } from "@/constants/Styles";
 
 import CryptoInfoAsRow from "@/components/CryptoInfoAsRow";
 import { useCryptoStore } from "@/store/cryptoStore";
+import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
 export default function Page() {
   const { setCryptoInfo } = useCryptoStore();
+  const tabBarHeight = useBottomTabBarHeight();
 
   const { data: currencies, isLoading } = useQuery<{
     status: CMCStatus;
@@ -48,7 +50,7 @@ export default function Page() {
   const quote = "INR";
 
   return (
-    <ScrollView>
+    <ScrollView contentContainerStyle={{ paddingBottom: tabBarHeight + 20 }}>
       <Text style={defaultStyles.sectionHeader}>Latest Crypto</Text>
       <View style={defaultStyles.block}>
         {currencies?.data?.map((c) => (

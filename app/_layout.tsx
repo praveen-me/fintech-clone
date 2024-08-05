@@ -1,4 +1,5 @@
 import Colors from "@/constants/Colors";
+import { UserInactivityProvider } from "@/lib/UserInactivityContext";
 import { tokenCache } from "@/utils/tokenCache";
 import { ClerkProvider, useAuth } from "@clerk/clerk-expo";
 import { Ionicons } from "@expo/vector-icons";
@@ -153,6 +154,25 @@ function InitialLayout() {
         }}
       />
 
+      <Stack.Screen
+        name="(authenticated)/(modals)/lock"
+        options={{ presentation: "modal", headerShown: false }}
+      />
+
+      <Stack.Screen
+        name="(authenticated)/(modals)/account"
+        options={{
+          presentation: "transparentModal",
+          animation: "fade",
+          headerTransparent: true,
+          headerTitle: "",
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => router.back()}>
+              <Ionicons name="close-outline" size={34} color={Colors.dark} />
+            </TouchableOpacity>
+          ),
+        }}
+      />
       <Stack.Screen name="help" options={{ presentation: "modal" }} />
     </Stack>
   );
@@ -167,7 +187,9 @@ const RootLayout = () => {
         publishableKey={CLERK_PUBLISHABLE_KEY}
         tokenCache={tokenCache}
       >
-        <InitialLayout />
+        <UserInactivityProvider>
+          <InitialLayout />
+        </UserInactivityProvider>
       </ClerkProvider>
     </QueryClientProvider>
   );

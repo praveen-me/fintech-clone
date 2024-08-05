@@ -4,7 +4,7 @@
     "slug": "fintech_clone",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/base-icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
@@ -31,7 +31,37 @@
     "plugins": [
       "expo-router",
       "expo-asset",
-      "expo-secure-store"
+      "expo-secure-store",
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Allow $(PRODUCT_NAME) to use Face ID."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to upload for profile picture."
+        }
+      ],
+      "react-native-compressor",
+      [
+        "expo-dynamic-app-icon",
+        {
+          "default": {
+            "image": "./assets/images/base-icon.png",
+            "prerendered": true
+          },
+          "blue": {
+            "image": "./assets/images/light-blue.png",
+            "prerendered": true
+          },
+          "light": {
+            "image": "./assets/images/light-icon.png",
+            "prerendered": true
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true

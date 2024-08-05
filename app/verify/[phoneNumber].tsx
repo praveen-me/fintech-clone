@@ -36,8 +36,6 @@ export default function Page() {
   });
 
   useEffect(() => {
-    console.log({ verificationCode });
-
     if (verificationCode.length === 6) {
       if (signin === "true") {
         verifySignInCode();
@@ -55,7 +53,6 @@ export default function Page() {
 
       await setActive!({ session: signUp!.createdSessionId });
     } catch (e) {
-      console.log(e);
       if (isClerkAPIResponseError(e)) {
         Alert.alert("Error", e.errors[0].message);
       }
@@ -71,7 +68,6 @@ export default function Page() {
 
       await setActive!({ session: signIn!.createdSessionId });
     } catch (e) {
-      console.log(e);
       if (isClerkAPIResponseError(e)) {
         Alert.alert("Error", e.errors[0].message);
       }
@@ -85,8 +81,6 @@ export default function Page() {
       <Text style={defaultStyles.descriptionText}>
         Code sent to {phoneNumber} unless you already have an account
       </Text>
-
-      {/* <Link href={''} */}
 
       <CodeField
         ref={ref}
