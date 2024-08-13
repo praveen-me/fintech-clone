@@ -5,8 +5,6 @@ import { ScrollView, StyleSheet, Text, TouchableOpacity } from "react-native";
 const categories = ["Overview", "News", "Orders", "Transactions"];
 
 const RenderSectionHeader = () => {
-  console.log("hello");
-
   const [activeCategory, setActiveCategory] = useState("");
 
   const isActiveCategory = useCallback(

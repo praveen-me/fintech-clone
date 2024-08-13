@@ -32,7 +32,6 @@ function InitialLayout() {
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
     ...FontAwesome.font,
   });
-
   const router = useRouter();
   const { isSignedIn } = useAuth();
   const segments = useSegments();
@@ -182,16 +181,18 @@ const CLERK_PUBLISHABLE_KEY = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
 
 const RootLayout = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ClerkProvider
-        publishableKey={CLERK_PUBLISHABLE_KEY}
-        tokenCache={tokenCache}
-      >
-        <UserInactivityProvider>
-          <InitialLayout />
-        </UserInactivityProvider>
-      </ClerkProvider>
-    </QueryClientProvider>
+    <>
+      <QueryClientProvider client={queryClient}>
+        <ClerkProvider
+          publishableKey={CLERK_PUBLISHABLE_KEY}
+          tokenCache={tokenCache}
+        >
+          <UserInactivityProvider>
+            <InitialLayout />
+          </UserInactivityProvider>
+        </ClerkProvider>
+      </QueryClientProvider>
+    </>
   );
 };
 

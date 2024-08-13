@@ -46,44 +46,49 @@ export default function SignUp() {
   const router = useRouter();
   const { signIn } = useSignIn();
 
-  const loginUser = useCallback(async (type: LoginType) => {
-    if (type === LoginType.PHONE) {
-      try {
-        const fullPhoneNumber = countryCode + phoneNumber;
+  const loginUser = useCallback(
+    async (type: LoginType) => {
+      if (type === LoginType.PHONE) {
+        try {
+          const fullPhoneNumber = countryCode + phoneNumber;
 
-        const { supportedFirstFactors } = await signIn!.create({
-          identifier: fullPhoneNumber,
-        });
+          console.log({ fullPhoneNumber });
 
-        const firstPhoneFactor = supportedFirstFactors.find(
-          (factor: SignInFactor) => factor.strategy === "phone_code"
-        );
+          const { supportedFirstFactors } = await signIn!.create({
+            identifier: fullPhoneNumber,
+          });
 
-        const { phoneNumberId } = firstPhoneFactor!;
+          const firstPhoneFactor = supportedFirstFactors.find(
+            (factor: SignInFactor) => factor.strategy === "phone_code"
+          );
 
-        await signIn?.prepareFirstFactor({
-          strategy: "phone_code",
-          phoneNumberId,
-        });
+          const { phoneNumberId } = firstPhoneFactor!;
 
-        router.push({
-          pathname: "/verify/[phoneNumber]",
-          params: {
-            phoneNumber: fullPhoneNumber,
-            signin: "true",
-          },
-        });
-      } catch (e) {
-        console.log(JSON.stringify(e, null, 2));
+          await signIn?.prepareFirstFactor({
+            strategy: "phone_code",
+            phoneNumberId,
+          });
 
-        if (isClerkAPIResponseError(e)) {
-          if (e.errors[0].code === "form_identifier_not_found") {
-            Alert.alert("Error", e.errors[0].message);
+          router.push({
+            pathname: "/verify/[phoneNumber]",
+            params: {
+              phoneNumber: fullPhoneNumber,
+              signin: "true",
+            },
+          });
+        } catch (e) {
+          console.log(JSON.stringify(e, null, 2));
+
+          if (isClerkAPIResponseError(e)) {
+            if (e.errors[0].code === "form_identifier_not_found") {
+              Alert.alert("Error", e.errors[0].message);
+            }
           }
         }
       }
-    }
-  }, []);
+    },
+    [phoneNumber]
+  );
 
   return (
     <KeyboardAvoidingView style={defaultStyles.flex1} behavior="padding">
