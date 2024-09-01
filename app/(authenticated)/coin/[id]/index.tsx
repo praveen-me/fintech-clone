@@ -18,7 +18,7 @@ import RenderItem from "@/containers/Coin/RenderItem";
 export default function Page() {
   const { id } = useLocalSearchParams();
   const headerHeight = useHeaderHeight();
-  const { cryptoInfo, getCryptoInfo } = useCryptoStore();
+  const { getCryptoInfo } = useCryptoStore();
 
   const currentCoinInfo = getCryptoInfo(id as string);
 
