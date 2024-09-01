@@ -14,7 +14,6 @@ export default function _layout() {
       <Tabs
         screenOptions={{
           tabBarActiveTintColor: Colors.primary,
-          tabBarInactiveTintColor: Colors.dark,
           tabBarBackground: () => (
             <BlurView
               intensity={25}
